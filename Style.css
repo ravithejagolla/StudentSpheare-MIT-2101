@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Navbar styles */
+.collapse .navbutton {
+    color: black;
+    /* border: 1px solid black; */
+}
+
+.navbar-nav .nav-item .nav-link {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #101741;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    text-decoration: wavy;
+}
+
+.collapse .navbutton:hover {
+    background-color: rgb(38, 38, 196);
+    color: white;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+#front {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers content vertically */
+    padding: 50px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSybN2Ai7Ign5iggD0iSUw7FyyfctX7Iz0LCt_8scx9ZyeSR8N-');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Centers the image */
+    height: 88vh;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 20px; /* Space between columns */
+    align-items: center; /* Vertically center content */
+}
+
+.video-content video {
+    max-width: 100%; /* Video scales with container */
+    max-height: 100%; /* Prevents video from overflowing vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* Ensures video maintains aspect ratio */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    #front {
+        padding: 30px;
+        height: 75vh;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack content in one column */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .video-content video {
+        width: 100%; /* Make video take up full width */
+        margin-top: 20px;
+        object-fit: contain; /* Ensure proper scaling */
+    }
+    .navbar .btn.navbutton {
+        display: inline-block; /* Make button inline with the toggle button */
+        margin-left: 10px; /* Space between the toggle button and Log In button */
+    }
+    /* Change navbar links to white */
+    .navbar-nav .nav-item .nav-link {
+        color: white !important;
+    }
+
+    .collapse a {
+        color: white;
+    }
+}
+
+@media (max-width: 480px) {
+    #front {
+        padding: 20px;
+        height: 60vh;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack content in one column */
+    }
+
+    .text-content h1 {
+        font-size: 32px; /* Adjust size for smaller screens */
+    }
+
+    .text-content h2 {
+        font-size: 18px; /* Adjust size for smaller screens */
+    }
+
+    .video-content video {
+        width: 100%; /* Ensure video remains full width */
+        margin-top: 10px;
+    }
+
+    /* Ensure navbar links are white */
+    .navbar-nav .nav-item .nav-link {
+        color: white !important;
+    }
+
+    /* Adjust Log In button for small screens */
+    .navbar .btn.navbutton {
+        display: block;
+        width: 100%; /* Make the button span full width */
+        text-align: center; /* Center the button text */
+        margin-top: 10px; /* Add some space above */
+    }
+}
+
+/* Media Query for medium screens (758px - 980px) */
+@media (min-width: 758px) and (max-width: 980px) {
+    .navbar .navbar-toggler {
+        display: block;  
+    }
+    .navbar-collapse {
+        display: none;  
+    }
+    .navbar-toggler.collapsed + .navbar-collapse {
+        display: flex !important; /* Show links when toggler is clicked */
+        flex-direction: column;
+        width: 100%; /* Full width for collapsible navbar */
+    }
+    .nav-link {
+        padding: 10px 0;
+        text-align: center;
+        color: white !important; /* Change font color to white */
+    }
+    .nav-link:hover {
+        color: #ddd !important; /* Add hover effect for better user experience */
+    }
+    
+    /* Adjust Log In button for medium screens */
+    .navbar .btn.navbutton {
+        display: inline-block;
+        width: auto; /* Keep the button width as auto */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
