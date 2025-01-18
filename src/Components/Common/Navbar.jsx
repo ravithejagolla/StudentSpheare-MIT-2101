@@ -93,6 +93,13 @@ const Navbar = () => {
                         </div>
                         <NavLink
                             className="hover:text-purple-600 text-[18px] font-bold"
+                            to="/profile"
+                            activeClassName="text-purple-600"
+                        >
+                            Profile
+                        </NavLink>
+                        <NavLink
+                            className="hover:text-purple-600 text-[18px] font-bold"
                             to="/contact"
                             activeClassName="text-purple-600"
                         >
