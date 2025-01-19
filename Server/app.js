@@ -2,16 +2,20 @@ import env from 'dotenv'
 env.config()
 import express from 'express'
 import cors from 'cors'
+import helmet from 'helmet'
 import { userrouter } from './routers/userRouter.js'
 import {connect} from 'mongoose'
 import { productRouter } from './routers/productRouter.js'
+import paymentRouter from './routers/paymentRouter.js'
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use(helmet())
 app.use('/mit',userrouter)
 app.use('/mit',productRouter)
+app.use('/mit',paymentRouter)
 
 
 
